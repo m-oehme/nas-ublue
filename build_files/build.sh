@@ -11,6 +11,7 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install -y tmux 
+dnf5 group install -y xfce-desktop
 
 # Use a COPR Example:
 #
@@ -21,4 +22,6 @@ dnf5 install -y tmux
 
 #### Example for enabling a System Unit File
 
+systemctl set-default graphical.target
+#systemctl enable gdm.service
 systemctl enable podman.socket
